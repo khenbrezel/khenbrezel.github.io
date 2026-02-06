@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khen Brezel | Option F</title>
+    <meta name="description" content="Khen Brezel is a San Francisco-based visual artist exploring vulnerability, identity, and queer embodiment through painting and drawing." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #1c1613;
+        --ink-soft: rgba(28, 22, 19, 0.7);
+        --fog: #f7f3ee;
+        --sand: #e9ded1;
+        --accent: #a65f3c;
+        --shadow: rgba(18, 14, 12, 0.2);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        background: var(--fog);
+        color: var(--ink);
+        line-height: 1.65;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 72px;
+        padding-bottom: 120px;
+      }
+
+      section {
+        padding: 0 6vw;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0 0 16px;
+        font-weight: 500;
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 7vw, 6rem);
+        letter-spacing: 0.05em;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3.4rem);
+      }
+
+      p {
+        margin: 0 0 16px;
+      }
+
+      .hero {
+        min-height: 90vh;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 6vw 70px;
+        background-image: url("assets/images/image16.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(9, 8, 7, 0.15) 0%, rgba(9, 8, 7, 0.75) 80%);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 620px;
+        color: #f7f2eb;
+      }
+
+      .kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.26em;
+        font-size: 0.7rem;
+        color: rgba(247, 242, 235, 0.8);
+      }
+
+      .subtitle {
+        margin-top: 18px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 1.1rem;
+        color: rgba(247, 242, 235, 0.88);
+      }
+
+      .subtitle span {
+        display: block;
+      }
+
+      .hero-note {
+        color: rgba(247, 242, 235, 0.7);
+        font-size: 0.95rem;
+      }
+
+      .about {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.7fr);
+        gap: 24px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .about::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          var(--fog) 0%,
+          var(--fog) 68%,
+          rgba(247, 243, 238, 0.95) 80%,
+          rgba(247, 243, 238, 0) 100%
+        );
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .about::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -6vw;
+        bottom: 0;
+        width: calc(100% + 6vw);
+        background-image: url("assets/images/khenbrezel_panorama.jpg");
+        background-size: contain;
+        background-position: right center;
+        background-repeat: no-repeat;
+        opacity: 0.95;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .about > * {
+        position: relative;
+        z-index: 2;
+      }
+
+      .about-aside {
+        border-left: 2px solid rgba(166, 95, 60, 0.35);
+        padding-left: 24px;
+      }
+
+      .exhibitions-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 18px;
+        display: grid;
+        gap: 8px;
+        color: var(--ink-soft);
+      }
+
+      .statement {
+        padding: 72px 6vw;
+        background: #efe5d7;
+      }
+
+      .statement-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 32px;
+        align-items: start;
+      }
+
+      .label {
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.75rem;
+        color: var(--accent);
+      }
+
+      .exhibit-note {
+        margin-top: 0;
+        padding: 22px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 18px;
+        box-shadow: 0 12px 26px var(--shadow);
+      }
+
+      .exhibit-meta {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+      }
+
+      .gallery {
+        padding: 0 2vw;
+      }
+
+      .gallery-head {
+        padding: 0 4vw 24px;
+      }
+
+      .carousel-shell {
+        position: relative;
+      }
+
+      .carousel-viewport {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-behavior: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        background: #e2d7c9;
+        padding: 12px 0;
+      }
+
+      .carousel-viewport::-webkit-scrollbar {
+        display: none;
+      }
+
+      .carousel-track {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 0 6vw;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 0 0 auto;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .gallery-item figcaption {
+        position: static;
+        padding: 0 2px;
+        color: var(--ink);
+        font-size: 0.78rem;
+        opacity: 0.85;
+      }
+
+      .gallery-item:hover figcaption {
+        opacity: 1;
+      }
+
+      .caption-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.05rem;
+      }
+
+      .caption-meta {
+        font-size: 0.68rem;
+        letter-spacing: 0.03em;
+        color: rgba(28, 22, 19, 0.7);
+      }
+
+      .image-button {
+        all: unset;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(21, 15, 12, 0.18);
+        background: #e2d7c9;
+      }
+
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 1px solid rgba(28, 22, 19, 0.2);
+        background: rgba(247, 243, 238, 0.9);
+        color: var(--ink);
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        z-index: 2;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .carousel-button:hover {
+        transform: translateY(-50%) scale(1.03);
+        box-shadow: 0 10px 20px rgba(21, 15, 12, 0.2);
+      }
+
+      .carousel-button.prev {
+        left: 18px;
+      }
+
+      .carousel-button.next {
+        right: 18px;
+      }
+
+      .contact {
+        position: relative;
+        color: #f7f2ea;
+        padding: 120px 6vw;
+        background-image: url("assets/images/image29.jpg");
+        background-size: cover;
+        background-position: center;
+        isolation: isolate;
+      }
+
+      .contact::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(12, 10, 9, 0.35) 0%, rgba(12, 10, 9, 0.7) 100%);
+        z-index: -1;
+      }
+
+      .contact-title {
+        position: absolute;
+        top: 24px;
+        right: 6vw;
+        z-index: 1;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: rgba(247, 242, 234, 0.9);
+      }
+
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 999px;
+        background: #f7f2ea;
+        color: #1c1613;
+        text-decoration: none;
+      }
+
+      .contact-link svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+      }
+
+      .site-footer {
+        background: #0f0b09;
+        color: rgba(247, 242, 234, 0.72);
+        text-align: center;
+        padding: 14px 6vw;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+      }
+
+      .lightbox.active {
+        display: flex;
+      }
+
+      .lightbox-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(15, 12, 10, 0.75);
+      }
+
+      .lightbox-panel {
+        position: relative;
+        z-index: 2;
+        max-width: min(1000px, 92vw);
+        max-height: 90vh;
+        background: #fefaf4;
+        border-radius: 18px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      }
+
+      .lightbox-media {
+        background: #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lightbox-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .lightbox-meta {
+        padding: 28px;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: rgba(22, 18, 15, 0.9);
+        color: #f7f2ea;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 999px;
+        cursor: pointer;
+        z-index: 3;
+      }
+
+      @media (max-width: 1024px) {
+        .about {
+          grid-template-columns: 1fr;
+        }
+        .about::after {
+          right: 0;
+          width: 100%;
+          opacity: 0.35;
+        }
+
+        .statement-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery {
+          padding: 0;
+        }
+
+        .lightbox-panel {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        section {
+          padding: 0 8vw;
+        }
+
+        .hero {
+          padding: 0 8vw 60px;
+        }
+
+        .gallery-head {
+          padding: 0 8vw 16px;
+        }
+
+        .carousel-button {
+          width: 34px;
+          height: 34px;
+        }
+
+        .carousel-track {
+          padding: 0 8vw;
+        }
+
+        .contact {
+          padding: 90px 8vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-content">
+          <div class="kicker">San Francisco, 2026</div>
+          <h1>Khen Brezel</h1>
+          <p class="subtitle">
+            <span>Vulnerability, Figure, and Presence</span>
+            <span>On Belonging</span>
+          </p>
+          <p>
+            A practice investigating the tension between the human figure and its interior life, where layered brushwork
+            and luminous color reveal vulnerability, identity, and queer embodiment.
+          </p>
+          <p class="hero-note">
+            Planned for April 2026: a solo exhibition exploring migration, belonging, and the ways identity adapts to new
+            places.
+          </p>
+        </div>
+      </section>
+
+      <section class="about">
+        <div>
+          <h2>About</h2>
+          <p>
+            Khen Brezel is a San Francisco-based visual artist whose practice investigates the tensions between the human
+            figure and its interior life. Working primarily in acrylic, and occasionally in pencil and charcoal, Brezel
+            constructs scenes that are at once theatrical and deeply personal, using layered brushwork and vibrant color
+            to explore themes of vulnerability, identity, and queer embodiment. His male subjects appear not as
+            archetypes but as emotional landscapes.
+          </p>
+          <p>
+            His recent work has been exhibited in institutions and galleries across California. His art resists
+            simplification. Each piece, whether painting or drawing, is an invitation: to look longer, to read between
+            gestures, to feel what is not said.
+          </p>
+          <p>
+            Working between acrylic, pencil, and charcoal, Brezel treats the male figure as a site of memory and
+            projection. Surfaces hold fingerprints, erasures, and the soft afterimage of photographic light, so the work
+            feels both immediate and constructed. The result is a body of work that asks how intimacy, identity, and
+            belonging shift when the image returns to the hand.
+          </p>
+        </div>
+        <aside class="about-aside">
+          <p class="label">Selected Exhibitions</p>
+          <ul class="exhibitions-list">
+            <li>New Museum Los Gatos</li>
+            <li>Harrington Gallery</li>
+            <li>Harvey Milk Photo Center</li>
+            <li>SF City Art Gallery</li>
+            <li>Rosebud Gallery</li>
+            <li>Castro Art Walk</li>
+            <li>DrawingRoom SF</li>
+            <li>Gallery Sausalito</li>
+          </ul>
+          <p class="label">Primary Media</p>
+          <p>Acrylic, pencil, charcoal</p>
+        </aside>
+      </section>
+
+      <section class="gallery" id="works">
+        <div class="gallery-head">
+          <h2>Selected Works</h2>
+          <p>Scaled by real-world dimensions and arranged as a continuous moving wall.</p>
+        </div>
+        <div class="carousel-shell">
+          <button class="carousel-button prev" type="button" aria-label="Scroll left">‹</button>
+          <div class="carousel-viewport" id="carouselViewport">
+            <div class="carousel-track" id="galleryGrid"></div>
+          </div>
+          <button class="carousel-button next" type="button" aria-label="Scroll right">›</button>
+        </div>
+      </section>
+
+      <section class="statement">
+        <div class="statement-grid">
+          <div>
+            <p class="label">Series Statement</p>
+            <h2>Unarmored</h2>
+            <p>
+              Unarmored is a meditation on the masculine form, unclothed, yes, but more radically, unguarded. In this
+              series, Khen Brezel presents a constellation of male figures: lounging, fragmented, interrupted by orchids,
+              shadows, chairs, citrus. The gaze is quiet but charged, as if the paintings are less concerned with seduction
+              than with the fragile architecture of presence. Every canvas is queer, sometimes overtly, sometimes through
+              nuance, through coded gesture or color, but never didactic.
+            </p>
+            <p>
+              Rather than broadcasting identity, Brezel's figures inhabit it. There is ambiguity, vulnerability, beauty,
+              and posture, but always a subtle defiance against how the male body has historically been posed and possessed.
+              Bodies are not only seen; they seem to listen. The paintings unfold like rooms without doors: intimate,
+              arresting, open to interpretation but never passive.
+            </p>
+          </div>
+          <aside class="exhibit-note">
+            <p class="label">Current Exhibition</p>
+            <h3>City Art Cooperative Gallery: February Group Exhibition</h3>
+            <p class="exhibit-meta">
+              February 4 to 28, 2026. Opening reception Friday, February 6, 7 to 10pm. Curated by Colin Sjostedt.
+            </p>
+            <p>
+              Khen's presentation brings charcoal on canvas figures into dialogue with pencil studies of male nudes. The
+              grouping, rendered in black, white, and subtle blue tones, reflects on queer art history, the male gaze, and
+              the shifting ideals of beauty in contemporary culture.
+            </p>
+            <p>
+              The works also trace a conversation between media: photography's claim to realism and charcoal's tactile,
+              imperfect surface. Erased traces, fingerprints, and the ghost of a camera flash remain visible, reminding us
+              how perception changes when an image returns to the hand.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-title">Blues, 2025</div>
+        <h2>Connect</h2>
+        <p>For inquiries, collaborations, or press.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:khenbrezel@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3.75 6.75A2.25 2.25 0 0 1 6 4.5h12a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 18 19.5H6a2.25 2.25 0 0 1-2.25-2.25V6.75Zm2.25-.75a.75.75 0 0 0-.75.75v.243l6.428 3.857a1.5 1.5 0 0 0 1.572 0L19.5 6.993V6.75a.75.75 0 0 0-.75-.75H6Zm13.5 3.296-5.768 3.461a3 3 0 0 1-3.464 0L4.5 9.296v7.954c0 .414.336.75.75.75h12a.75.75 0 0 0 .75-.75V9.296Z"/>
+            </svg>
+            khenbrezel@gmail.com
+          </a>
+          <a class="contact-link" href="https://instagram.com/khenbrezel" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm5 2.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5ZM17.75 6.5a.75.75 0 1 1-.75.75.75.75 0 0 1 .75-.75Z"/>
+            </svg>
+            @khenbrezel
+          </a>
+        </div>
+      </section>
+      <footer class="site-footer">All rights reserved © Khen Brezel</footer>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close></div>
+      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+        <button class="lightbox-close" type="button" data-close>Close</button>
+        <div class="lightbox-media">
+          <img id="lightboxImage" alt="" />
+        </div>
+        <div class="lightbox-meta">
+          <h3 id="lightboxTitle"></h3>
+          <p id="lightboxInfo"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="gallery-data.js"></script>
+    <script src="gallery-carousel.js"></script>
+  </body>
+</html>
