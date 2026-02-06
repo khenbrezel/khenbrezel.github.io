@@ -58,15 +58,15 @@ window.galleryGroups = [
     id: "yellow-safe",
     items: [
       {
-        src: "assets/images/image2.jpg",
-        title: "Yellow Pillow",
+        src: "assets/images/image1.jpg",
+        title: "Safe Space",
         year: "2025",
         medium: "Acrylic on canvas",
         size: "12 x 16 in",
       },
       {
-        src: "assets/images/image1.jpg",
-        title: "Safe Space",
+        src: "assets/images/image2.jpg",
+        title: "Yellow Pillow",
         year: "2025",
         medium: "Acrylic on canvas",
         size: "12 x 16 in",
@@ -77,14 +77,6 @@ window.galleryGroups = [
     id: "tadzio",
     items: [
       {
-        src: "assets/images/image10.png",
-        title: "Tadzio",
-        year: "2025",
-        medium: "Acrylic on canvas",
-        size: "12 x 12 in each",
-        note: "Triptych",
-      },
-      {
         src: "assets/images/image23.png",
         title: "Tadzio",
         year: "2025",
@@ -94,6 +86,14 @@ window.galleryGroups = [
       },
       {
         src: "assets/images/image20.png",
+        title: "Tadzio",
+        year: "2025",
+        medium: "Acrylic on canvas",
+        size: "12 x 12 in each",
+        note: "Triptych",
+      },
+      {
+        src: "assets/images/image10.png",
         title: "Tadzio",
         year: "2025",
         medium: "Acrylic on canvas",
