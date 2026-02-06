@@ -119,6 +119,24 @@
         overflow: hidden;
       }
 
+      .collapsible-toggle {
+        display: none;
+        margin-top: 8px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(28, 22, 19, 0.2);
+        background: transparent;
+        color: var(--ink);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .about-portrait-mobile {
+        display: none;
+      }
+
       .about::before {
         content: "";
         position: absolute;
@@ -491,6 +509,54 @@
         .contact {
           padding: 90px 8vw;
         }
+
+        .about::before,
+        .about::after {
+          display: none;
+        }
+
+        .collapsible-toggle {
+          display: inline-flex;
+          align-self: flex-start;
+        }
+
+        .collapsible {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .collapsible-content {
+          max-height: 9.5em;
+          overflow: hidden;
+          -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0));
+          mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0));
+        }
+
+        .collapsible.is-open .collapsible-content {
+          max-height: none;
+          -webkit-mask-image: none;
+          mask-image: none;
+        }
+
+        .about-portrait-mobile {
+          display: block;
+          margin: 24px 0;
+          width: 100%;
+        }
+
+        .about-portrait-mobile img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .about-portrait-mobile figcaption {
+          margin-top: 10px;
+          font-size: 0.72rem;
+          text-transform: uppercase;
+          letter-spacing: 0.16em;
+          color: var(--ink-soft);
+        }
       }
     </style>
   </head>
@@ -518,25 +584,34 @@
       <section class="about">
         <div>
           <h2>About</h2>
-          <p>
-            Khen Brezel is a San Francisco-based visual artist whose practice investigates the tensions between the human
-            figure and its interior life. Working primarily in acrylic, and occasionally in pencil and charcoal, Brezel
-            constructs scenes that are at once theatrical and deeply personal, using layered brushwork and vibrant color
-            to explore themes of vulnerability, identity, and queer embodiment. His male subjects appear not as
-            archetypes but as emotional landscapes.
-          </p>
-          <p>
-            His recent work has been exhibited in institutions and galleries across California. His art resists
-            simplification. Each piece, whether painting or drawing, is an invitation: to look longer, to read between
-            gestures, to feel what is not said.
-          </p>
-          <p>
-            Working between acrylic, pencil, and charcoal, Brezel treats the male figure as a site of memory and
-            projection. Surfaces hold fingerprints, erasures, and the soft afterimage of photographic light, so the work
-            feels both immediate and constructed. The result is a body of work that asks how intimacy, identity, and
-            belonging shift when the image returns to the hand.
-          </p>
+          <div class="collapsible" data-collapsible>
+            <div class="collapsible-content">
+              <p>
+                Khen Brezel is a San Francisco-based visual artist whose practice investigates the tensions between the
+                human figure and its interior life. Working primarily in acrylic, and occasionally in pencil and charcoal,
+                Brezel constructs scenes that are at once theatrical and deeply personal, using layered brushwork and
+                vibrant color to explore themes of vulnerability, identity, and queer embodiment. His male subjects appear
+                not as archetypes but as emotional landscapes.
+              </p>
+              <p>
+                His recent work has been exhibited in institutions and galleries across California. His art resists
+                simplification. Each piece, whether painting or drawing, is an invitation: to look longer, to read between
+                gestures, to feel what is not said.
+              </p>
+              <p>
+                Working between acrylic, pencil, and charcoal, Brezel treats the male figure as a site of memory and
+                projection. Surfaces hold fingerprints, erasures, and the soft afterimage of photographic light, so the work
+                feels both immediate and constructed. The result is a body of work that asks how intimacy, identity, and
+                belonging shift when the image returns to the hand.
+              </p>
+            </div>
+            <button class="collapsible-toggle" type="button">Read more</button>
+          </div>
         </div>
+        <figure class="about-portrait-mobile">
+          <img src="assets/images/khenbrezel_panorama.jpg" alt="Khen Brezel in the gallery" />
+          <figcaption>Khen Brezel</figcaption>
+        </figure>
         <aside class="about-aside">
           <p class="label">Selected Exhibitions</p>
           <ul class="exhibitions-list">
@@ -573,19 +648,24 @@
           <div>
             <p class="label">Series Statement</p>
             <h2>Unarmored</h2>
-            <p>
-              Unarmored is a meditation on the masculine form, unclothed, yes, but more radically, unguarded. In this
-              series, Khen Brezel presents a constellation of male figures: lounging, fragmented, interrupted by orchids,
-              shadows, chairs, citrus. The gaze is quiet but charged, as if the paintings are less concerned with seduction
-              than with the fragile architecture of presence. Every canvas is queer, sometimes overtly, sometimes through
-              nuance, through coded gesture or color, but never didactic.
-            </p>
-            <p>
-              Rather than broadcasting identity, Brezel's figures inhabit it. There is ambiguity, vulnerability, beauty,
-              and posture, but always a subtle defiance against how the male body has historically been posed and possessed.
-              Bodies are not only seen; they seem to listen. The paintings unfold like rooms without doors: intimate,
-              arresting, open to interpretation but never passive.
-            </p>
+            <div class="collapsible" data-collapsible>
+              <div class="collapsible-content">
+                <p>
+                  Unarmored is a meditation on the masculine form, unclothed, yes, but more radically, unguarded. In this
+                  series, Khen Brezel presents a constellation of male figures: lounging, fragmented, interrupted by
+                  orchids, shadows, chairs, citrus. The gaze is quiet but charged, as if the paintings are less concerned
+                  with seduction than with the fragile architecture of presence. Every canvas is queer, sometimes overtly,
+                  sometimes through nuance, through coded gesture or color, but never didactic.
+                </p>
+                <p>
+                  Rather than broadcasting identity, Brezel's figures inhabit it. There is ambiguity, vulnerability,
+                  beauty, and posture, but always a subtle defiance against how the male body has historically been posed
+                  and possessed. Bodies are not only seen; they seem to listen. The paintings unfold like rooms without
+                  doors: intimate, arresting, open to interpretation but never passive.
+                </p>
+              </div>
+              <button class="collapsible-toggle" type="button">Read more</button>
+            </div>
           </div>
           <aside class="exhibit-note">
             <p class="label">Current Exhibition</p>
@@ -593,16 +673,21 @@
             <p class="exhibit-meta">
               February 4 to 28, 2026. Opening reception Friday, February 6, 7 to 10pm. Curated by Colin Sjostedt.
             </p>
-            <p>
-              Khen's presentation brings charcoal on canvas figures into dialogue with pencil studies of male nudes. The
-              grouping, rendered in black, white, and subtle blue tones, reflects on queer art history, the male gaze, and
-              the shifting ideals of beauty in contemporary culture.
-            </p>
-            <p>
-              The works also trace a conversation between media: photography's claim to realism and charcoal's tactile,
-              imperfect surface. Erased traces, fingerprints, and the ghost of a camera flash remain visible, reminding us
-              how perception changes when an image returns to the hand.
-            </p>
+            <div class="collapsible" data-collapsible>
+              <div class="collapsible-content">
+                <p>
+                  Khen's presentation brings charcoal on canvas figures into dialogue with pencil studies of male nudes.
+                  The grouping, rendered in black, white, and subtle blue tones, reflects on queer art history, the male
+                  gaze, and the shifting ideals of beauty in contemporary culture.
+                </p>
+                <p>
+                  The works also trace a conversation between media: photography's claim to realism and charcoal's tactile,
+                  imperfect surface. Erased traces, fingerprints, and the ghost of a camera flash remain visible,
+                  reminding us how perception changes when an image returns to the hand.
+                </p>
+              </div>
+              <button class="collapsible-toggle" type="button">Read more</button>
+            </div>
           </aside>
         </div>
       </section>
@@ -645,5 +730,16 @@
 
     <script src="gallery-data.js"></script>
     <script src="gallery-carousel.js"></script>
+    <script>
+      document.querySelectorAll("[data-collapsible]").forEach((block) => {
+        const button = block.querySelector(".collapsible-toggle");
+        const content = block.querySelector(".collapsible-content");
+        if (!button || !content) return;
+        button.addEventListener("click", () => {
+          const open = block.classList.toggle("is-open");
+          button.textContent = open ? "Read less" : "Read more";
+        });
+      });
+    </script>
   </body>
 </html>
