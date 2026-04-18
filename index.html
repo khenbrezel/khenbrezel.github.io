@@ -206,12 +206,57 @@
         color: var(--accent);
       }
 
+      .shows-column {
+        display: grid;
+        gap: 22px;
+      }
+
       .exhibit-note {
         margin-top: 0;
         padding: 22px;
         background: rgba(255, 255, 255, 0.7);
         border-radius: 18px;
         box-shadow: 0 12px 26px var(--shadow);
+      }
+
+      .show-card {
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .show-poster {
+        margin: 16px 0 18px;
+      }
+
+      .show-poster img {
+        width: 100%;
+        display: block;
+        border-radius: 16px;
+        box-shadow: 0 12px 24px rgba(68, 51, 40, 0.16);
+      }
+
+      .show-place {
+        margin: 14px 0 0;
+        color: var(--ink-soft);
+      }
+
+      .show-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 18px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: #1f1a16;
+        color: #f6efe5;
+        text-decoration: none;
+        font-size: 0.88rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .show-link:hover {
+        transform: translateY(-1px);
+        background: #3a2a22;
       }
 
       .exhibit-meta {
@@ -667,28 +712,53 @@
               <button class="collapsible-toggle" type="button">Read more</button>
             </div>
           </div>
-          <aside class="exhibit-note">
-            <p class="label">Current Exhibition</p>
-            <h3>City Art Cooperative Gallery: February Group Exhibition</h3>
-            <p class="exhibit-meta">
-              February 4 to 28, 2026. Opening reception Friday, February 6, 7 to 10pm. Curated by Colin Sjostedt.
-            </p>
-            <div class="collapsible" data-collapsible>
-              <div class="collapsible-content">
-                <p>
-                  Khen's presentation brings charcoal on canvas figures into dialogue with pencil studies of male nudes.
-                  The grouping, rendered in black, white, and subtle blue tones, reflects on queer art history, the male
-                  gaze, and the shifting ideals of beauty in contemporary culture.
-                </p>
-                <p>
-                  The works also trace a conversation between media: photography's claim to realism and charcoal's tactile,
-                  imperfect surface. Erased traces, fingerprints, and the ghost of a camera flash remain visible,
-                  reminding us how perception changes when an image returns to the hand.
-                </p>
+          <div class="shows-column">
+            <article class="exhibit-note show-card">
+              <p class="label">Next Show</p>
+              <figure class="show-poster">
+                <img src="assets/images/Placeholder_Khen_Brezel.png" alt="Poster for Place holder by Khen Brezel" />
+              </figure>
+              <h3>Place holder</h3>
+              <p class="exhibit-meta">
+                Friday, May 1, 2026 / Castro Art Walk / 5 to 8pm
+              </p>
+              <p>
+                Place holder is Khen Brezel's next presentation for Castro Art Walk at Klein Epstein Parker. Under the
+                line "Traversing states of mind and land," the show gathers recent painting around movement, emotional
+                atmosphere, and the unstable space between body and place.
+              </p>
+              <p class="show-place">
+                <strong>Klein Epstein Parker</strong><br />
+                2331 Market St, San Francisco
+              </p>
+              <a class="show-link" href="https://partiful.com/e/ySJcYAnBAF9LeF2Ibd7U" target="_blank" rel="noreferrer">
+                Register for the event
+              </a>
+            </article>
+
+            <aside class="exhibit-note">
+              <p class="label">Recent Exhibition</p>
+              <h3>City Art Cooperative Gallery: February Group Exhibition</h3>
+              <p class="exhibit-meta">
+                February 4 to 28, 2026. Opening reception Friday, February 6, 7 to 10pm. Curated by Colin Sjostedt.
+              </p>
+              <div class="collapsible" data-collapsible>
+                <div class="collapsible-content">
+                  <p>
+                    Khen's presentation brought charcoal on canvas figures into dialogue with pencil studies of male
+                    nudes. The grouping, rendered in black, white, and subtle blue tones, reflected on queer art history,
+                    the male gaze, and the shifting ideals of beauty in contemporary culture.
+                  </p>
+                  <p>
+                    The works also traced a conversation between media: photography's claim to realism and charcoal's
+                    tactile, imperfect surface. Erased traces, fingerprints, and the ghost of a camera flash remained
+                    visible, reminding us how perception changes when an image returns to the hand.
+                  </p>
+                </div>
+                <button class="collapsible-toggle" type="button">Read more</button>
               </div>
-              <button class="collapsible-toggle" type="button">Read more</button>
-            </div>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 
