@@ -14,8 +14,14 @@ const maxArea = Math.max(
 const minScale = 0.82;
 const maxScale = 1.12;
 const stackBreakpoint = 720;
+const excluded = new Set(["assets/images/image28.png"]);
+const flattenItems = () =>
+  groups.flatMap((group) => group.items).filter((item) => !excluded.has(item.src));
+const itemBySrc = new Map(flattenItems().map((item) => [item.src, item]));
 
 const scaleFor = (src) => {
+  const item = itemBySrc.get(src);
+  if (item?.scale) return item.scale;
   const d = dims[src];
   if (!d) return 0.95;
   const area = d[0] * d[1];
@@ -24,6 +30,8 @@ const scaleFor = (src) => {
 };
 
 const ratioFor = (src) => {
+  const item = itemBySrc.get(src);
+  if (item?.ratio) return item.ratio;
   const d = dims[src];
   if (!d) return 1;
   return d[0] / d[1];
@@ -65,10 +73,6 @@ const createItemElement = (item, width, height) => {
 
   return figure;
 };
-
-const excluded = new Set(["assets/images/image28.png"]);
-const flattenItems = () =>
-  groups.flatMap((group) => group.items).filter((item) => !excluded.has(item.src));
 
 const baseHeightFor = () => {
   const width = window.innerWidth;

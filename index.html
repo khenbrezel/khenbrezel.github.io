@@ -221,15 +221,31 @@
 
       .show-card {
         background: rgba(255, 255, 255, 0.8);
+        display: grid;
+        grid-template-columns: minmax(0, 0.82fr) minmax(260px, 0.9fr);
+        gap: 24px;
+        align-items: start;
+      }
+
+      .show-card-copy {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .show-info {
+        display: grid;
+        gap: 14px;
+        margin: 6px 0 18px;
       }
 
       .show-poster {
-        margin: 16px 0 18px;
+        margin: 0;
       }
 
       .show-poster img {
-        width: 100%;
+        width: min(100%, 400px);
         display: block;
+        margin: 0 auto;
         border-radius: 16px;
         box-shadow: 0 12px 24px rgba(68, 51, 40, 0.16);
       }
@@ -520,6 +536,10 @@
           grid-template-columns: 1fr;
         }
 
+        .show-card {
+          grid-template-columns: 1fr;
+        }
+
         .gallery {
           padding: 0;
         }
@@ -677,7 +697,7 @@
       <section class="gallery" id="works">
         <div class="gallery-head">
           <h2>Selected Works</h2>
-          <p>Scaled by real-world dimensions and arranged as a continuous moving wall.</p>
+          <p>Seventeen works from <em>Placeholder</em>, moving in exhibition order.</p>
         </div>
         <div class="carousel-shell">
           <button class="carousel-button prev" type="button" aria-label="Scroll left">‹</button>
@@ -692,21 +712,31 @@
         <div class="statement-grid">
           <div>
             <p class="label">Series Statement</p>
-            <h2>Unarmored</h2>
+            <h2>Placeholder</h2>
             <div class="collapsible" data-collapsible>
               <div class="collapsible-content">
                 <p>
-                  Unarmored is a meditation on the masculine form, unclothed, yes, but more radically, unguarded. In this
-                  series, Khen Brezel presents a constellation of male figures: lounging, fragmented, interrupted by
-                  orchids, shadows, chairs, citrus. The gaze is quiet but charged, as if the paintings are less concerned
-                  with seduction than with the fragile architecture of presence. Every canvas is queer, sometimes overtly,
-                  sometimes through nuance, through coded gesture or color, but never didactic.
+                  Placeholder brings together Khen Brezel's intimate study of the male figure as both body and terrain.
+                  Across domestic rooms, coastal edges, imagined landscapes, and suspended interiors, the men in these
+                  works appear not as fixed subjects, but as beings in transition. They recline, wait, reach, hide, float,
+                  divide, and reassemble. Their bodies become places where memory, desire, solitude, and tenderness are
+                  quietly stored.
                 </p>
                 <p>
-                  Rather than broadcasting identity, Brezel's figures inhabit it. There is ambiguity, vulnerability,
-                  beauty, and posture, but always a subtle defiance against how the male body has historically been posed
-                  and possessed. Bodies are not only seen; they seem to listen. The paintings unfold like rooms without
-                  doors: intimate, arresting, open to interpretation but never passive.
+                  Working in acrylic, pencil, and charcoal, Brezel moves between vivid color and muted restraint, between
+                  the realism of flesh and the symbolic language of space. A room can become a psychological chamber. A
+                  beach can become a threshold. A window, a hill, a couch, a pool, or a patch of blue sea can hold the
+                  same emotional weight as a face or a gesture. In this exhibition, landscape is never only landscape, and
+                  the body is never only body. Each painting asks what it means to be held by a place while still
+                  searching for one.
+                </p>
+                <p>
+                  The title Placeholder suggests a state of waiting, but also a state of becoming. These figures occupy
+                  moments before arrival, after departure, or between versions of themselves. They are vulnerable, sensual,
+                  guarded, exposed, and often alone, yet never empty. Through them, Brezel reflects on queer presence,
+                  masculine softness, and the fragile architecture of belonging. The exhibition invites viewers to consider
+                  not only what a person carries within the body, but also what the world places around him, and what
+                  remains when he is still becoming.
                 </p>
               </div>
               <button class="collapsible-toggle" type="button">Read more</button>
@@ -714,50 +744,31 @@
           </div>
           <div class="shows-column">
             <article class="exhibit-note show-card">
-              <p class="label">Next Show</p>
+              <div class="show-card-copy">
+                <p class="label">Next Show</p>
+                <h3>Place holder</h3>
+                <div class="show-info">
+                  <p class="exhibit-meta">
+                    Friday, May 1, 2026 / Castro Art Walk / 5 to 8pm
+                  </p>
+                  <p class="show-place">
+                    <strong>Klein Epstein Parker</strong><br />
+                    2331 Market St, San Francisco
+                  </p>
+                  <a class="show-link" href="https://partiful.com/e/ySJcYAnBAF9LeF2Ibd7U" target="_blank" rel="noreferrer">
+                    Register for the event
+                  </a>
+                </div>
+                <p>
+                  Place holder is Khen Brezel's next presentation for Castro Art Walk at Klein Epstein Parker. Under the
+                  line "Traversing states of mind and land," the show gathers recent painting around movement, emotional
+                  atmosphere, and the unstable space between body and place.
+                </p>
+              </div>
               <figure class="show-poster">
                 <img src="assets/images/Placeholder_Khen_Brezel.png" alt="Poster for Place holder by Khen Brezel" />
               </figure>
-              <h3>Place holder</h3>
-              <p class="exhibit-meta">
-                Friday, May 1, 2026 / Castro Art Walk / 5 to 8pm
-              </p>
-              <p>
-                Place holder is Khen Brezel's next presentation for Castro Art Walk at Klein Epstein Parker. Under the
-                line "Traversing states of mind and land," the show gathers recent painting around movement, emotional
-                atmosphere, and the unstable space between body and place.
-              </p>
-              <p class="show-place">
-                <strong>Klein Epstein Parker</strong><br />
-                2331 Market St, San Francisco
-              </p>
-              <a class="show-link" href="https://partiful.com/e/ySJcYAnBAF9LeF2Ibd7U" target="_blank" rel="noreferrer">
-                Register for the event
-              </a>
             </article>
-
-            <aside class="exhibit-note">
-              <p class="label">Recent Exhibition</p>
-              <h3>City Art Cooperative Gallery: February Group Exhibition</h3>
-              <p class="exhibit-meta">
-                February 4 to 28, 2026. Opening reception Friday, February 6, 7 to 10pm. Curated by Colin Sjostedt.
-              </p>
-              <div class="collapsible" data-collapsible>
-                <div class="collapsible-content">
-                  <p>
-                    Khen's presentation brought charcoal on canvas figures into dialogue with pencil studies of male
-                    nudes. The grouping, rendered in black, white, and subtle blue tones, reflected on queer art history,
-                    the male gaze, and the shifting ideals of beauty in contemporary culture.
-                  </p>
-                  <p>
-                    The works also traced a conversation between media: photography's claim to realism and charcoal's
-                    tactile, imperfect surface. Erased traces, fingerprints, and the ghost of a camera flash remained
-                    visible, reminding us how perception changes when an image returns to the hand.
-                  </p>
-                </div>
-                <button class="collapsible-toggle" type="button">Read more</button>
-              </div>
-            </aside>
           </div>
         </div>
       </section>
